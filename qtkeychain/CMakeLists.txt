@@ -14,6 +14,7 @@ if(MSVC)
     else()
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
     endif()
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /utf-8")
 else()
     # MSVC's STL / Qt headers are not MSVC -Wall clean, so don't enable it there
     add_definitions( -Wall -Werror=return-type )
@@ -31,7 +32,7 @@ if(WIN32)
     endif()
 
     set(CMAKE_CXX_STANDARD 17)
-    add_definitions( /utf-8 -DUNICODE )
+    add_definitions( -DUNICODE )
 endif()
 
 if(APPLE)
